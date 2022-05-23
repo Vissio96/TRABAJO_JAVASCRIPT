@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html  lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>titulo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+<script>
+    const precioTicket = 200;
+
+    function resumir (){
+    var cantidadTicket = document.getElementById("inputCantidad").value;
+    var descuento = document.getElementById("inputCategoria").value;
+
+    var precio = cantidadTicket*(precioTicket - ((precioTicket*descuento)/100));
+
+    document.getElementById("compraTotal").value="Total a pagar: $" + precio;
+}
+</script>
+
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand pl-3" href="#">Conf Bs As</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-toggle="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">La conferencia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">El lugar y la fecha</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Conviertete en orador</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Comprar tickets</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <br>
+
+
+<div class="container">
+    <div class="card-deck card-flex">
+        <div class="card border-primary">
+            <div class="card-body text-center">
+                <h5 class="card-title">Estudiante</h5>
+                <p class="card-text">Tiene un descuento</p>
+                <p><b>80%</b></p>
+                <p class="card-text"><small class="text-muted">*presentar documentacion</small></p>
+            </div>
+        </div>
+        <div class="card border-info">
+            <div class="card-body text-center">
+                <h5 class="card-title">Trainee</h5>
+                <p class="card-text">Tiene un descuento</p>
+                <p><b>50%</b></p>
+                <p class="card-text"><small class="text-muted">*presentar documentacion</small></p>
+            </div>
+        </div>
+        <div class="card border-warning">
+            <div class="card-body text-center">
+                <h5 class="card-title">Junior</h5>
+                <p class="card-text">Tiene un descuento</p>
+                <p><b>15%</b></p>
+                <p class="card-text"><small class="text-muted">*presentar documentacion</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <p class="text-center my-2">VENTA</p>
+    <h2 class="text-center"> VALOR DE TICKET $200</h2>
+    <form>
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Nombre">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Apellido">
+            </div>
+        </div>
+    <br>
+    <div class="form-row">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Correo">
+        </div>
+    </div>
+    <br>
+    <div class="form-row">
+        <div class="col">
+            <label for="inputCantidad">Cantidad</label>
+            <input type="number" class="form-control" id="inputCantidad" placeholder="Cantidad">
+        </div>
+        <div class="col">
+            <label for="inputCategoria">Categoria</label>
+            <select id="inputCategoria" class="form-control">
+                <option value="80" selected>Estudiante</option>
+                <option value="50">Trainee</option>
+                <option value="15">Junior</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div class="form-row">
+        <div class="col">
+            <input type="text" id="compraTotal" class="alert alert-primary" style="width: 100%" value="Total a pagar: $" role="alert" readonly>
+        </div>
+    </div>
+    <br>
+    <div class="form-row">
+        <div class="col">
+            <button type="reset" class="btn btn-success btn-block">Borrar</button>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-success btn-block" onclick="resumir()">Resumen</button>
+        </div>
+    </div>
+    <br>
+
+    </form>
+</div>
+
+</body>
+
+<footer class="mt-auto">
+    <div class="container-fluid py-3">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <nav_footer class="nav-link" href="#">Preguntas<br>frecuentes</nav_footer>
+            </li>
+            <li class="nav-item">
+                <nav_footer class="nav-link" href="#">Contactanos</nav_footer>
+            </li>
+            <li class="nav-item">
+                <nav_footer class="nav-link" href="#">Prensa</nav_footer>
+            </li>
+            <li class="nav-item">
+                <nav_footer class="nav-link" href="#">Conferencias</nav_footer>
+            </li>
+            <li class="nav-item">
+                <nav_footer class="nav-link" href="#">Terminos y<br>condiciones</nav_footer>
+            </li>
+            <li class="nav-item">
+                <nav_footer class="nav-link" href="#">Privacidad</nav_footer>
+            </li>
+            <li class="nav-item">
+                <nav_footer class="nav-link" href="#">Estudiantes</nav_footer>
+            </li>
+
+        </ul>
+    </div>
+
+</footer>
+</html>
